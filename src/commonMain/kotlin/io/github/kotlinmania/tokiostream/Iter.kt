@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.yield
 
 /** Stream for the [iter] function. */
-class Iter<T> internal constructor(
+internal class Iter<T>(
     private val iter: Iterator<T>,
     private val knownSize: Pair<Int, Int?> = 0 to null,
 ) : Flow<T> {
@@ -48,7 +48,7 @@ class Iter<T> internal constructor(
  * check(stream.firstOrNull() == 17)
  * ```
  */
-fun <T> iter(i: Iterable<T>): Iter<T> {
+fun <T> iter(i: Iterable<T>): Flow<T> {
     val collection = i as? Collection<T>
     val size = collection?.size
     val hint: Pair<Int, Int?> = if (size != null) size to size else 0 to null

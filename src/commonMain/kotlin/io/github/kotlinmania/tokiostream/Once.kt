@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 
 /** Stream for the [once] function. */
-class Once<T> internal constructor(private val iter: Iter<T>) : Flow<T> {
+internal class Once<T>(private val iter: Iter<T>) : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
         iter.collect(collector)
     }
@@ -28,4 +28,4 @@ class Once<T> internal constructor(private val iter: Iter<T>) : Flow<T> {
  * check(one.firstOrNull() == null)
  * ```
  */
-fun <T> once(value: T): Once<T> = Once(iter(listOf(value)))
+fun <T> once(value: T): Flow<T> = Once(iter(listOf(value)))
