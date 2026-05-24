@@ -194,10 +194,18 @@ kotlin {
         binaries.framework { baseName = "TokioStream"; xcf.add(this) }
     }
     iosSimulatorArm64 {
-        binaries.framework { baseName = "TokioStream"; xcf.add(this) }
+        binaries.framework {
+            baseName = "TokioStream"
+            isStatic = true
+            xcf.add(this)
+        }
     }
     iosX64 {
-        binaries.framework { baseName = "TokioStream"; xcf.add(this) }
+        binaries.framework {
+            baseName = "TokioStream"
+            isStatic = true
+            xcf.add(this)
+        }
     }
 
     tvosArm64 {
