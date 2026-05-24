@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 
 /** Stream for the [empty] function. */
-class Empty<T> internal constructor() : Flow<T> {
+internal class Empty<T> : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
         // Streams do nothing unless polled; this one is immediately complete.
     }
@@ -26,4 +26,4 @@ class Empty<T> internal constructor() : Flow<T> {
  * check(none.firstOrNull() == null)
  * ```
  */
-fun <T> empty(): Empty<T> = Empty()
+fun <T> empty(): Flow<T> = Empty()
