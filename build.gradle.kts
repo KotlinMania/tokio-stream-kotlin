@@ -478,10 +478,6 @@ val codeqlCompileJvm = tasks.register<JavaExec>("codeqlCompileJvm") {
     }
 }
 
-tasks.register<Exec>("setupAndroidSdk") {
-    group = "setup"
-    description = "Downloads and configures the project-local Android SDK."
-    commandLine("./setup-android-sdk.sh")
 tasks.register("setupAndroidSdk") {
     group = "setup"
     description = "Downloads and configures the project-local Android SDK."
