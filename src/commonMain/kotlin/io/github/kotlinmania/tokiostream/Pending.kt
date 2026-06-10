@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 
 /** Stream for the [pending] function. */
-class Pending<T> internal constructor() : Flow<T> {
+internal class Pending<T> : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
         awaitCancellation()
     }
@@ -33,4 +33,4 @@ class Pending<T> internal constructor() : Flow<T> {
  * error("unreachable")
  * ```
  */
-fun <T> pending(): Pending<T> = Pending()
+fun <T> pending(): Flow<T> = Pending()
