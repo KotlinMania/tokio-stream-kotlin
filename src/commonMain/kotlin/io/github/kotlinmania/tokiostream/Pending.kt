@@ -1,4 +1,4 @@
-// port-lint: source src/pending.rs
+// port-lint: source pending.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.awaitCancellation
