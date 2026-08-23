@@ -1,4 +1,4 @@
-// port-lint: tests tests/stream_iter.rs
+// port-lint: tests stream_iter.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.firstOrNull

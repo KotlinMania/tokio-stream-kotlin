@@ -1,4 +1,4 @@
-// port-lint: source src/once.rs
+// port-lint: source once.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.Flow
