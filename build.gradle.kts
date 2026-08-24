@@ -704,14 +704,39 @@ mavenPublishing {
 // Tasks
 // ============================================================================
 
+// Patch generated SPM Package.swift to include minimum macOS platform for Swift Concurrency
+tasks.configureEach {
+    if (name.endsWith("GenerateSPMPackage")) {
+        doLast {
+            val spmDir =
+                layout.buildDirectory
+                    .dir("SPMPackage")
+                    .orNull
+                    ?.asFile
+            if (spmDir != null && spmDir.exists()) {
+                spmDir.walkTopDown().filter { it.name == "Package.swift" }.forEach { file ->
+                    val text = file.readText()
+                    if (!text.contains("platforms:")) {
+                        file.writeText(
+                            text.replaceFirst(
+                                Regex("""(let package = Package\s*\(\s*name:\s*"[^"]*",)"""),
+                                "$1\n    platforms: [.macOS(.v14)],",
+                            ),
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Exact test lifecycle task. Without this, ./gradlew test is ambiguous between
-// Android test task names. This runs commonTest through the KMP allTests
-// lifecycle and adds the Android host + Swift Export parity tests.
+// Android test task names. This runs hostTests through the KMP suite
+// and adds the Android host + Swift Export parity tests.
 tasks.register("test") {
     group = "verification"
     description = "Runs the commonTest-backed KMP suite, Android host tests, and Swift Export smoke test."
-    dependsOn("allTests")
-    dependsOn("testAndroidHostTest")
+    dependsOn("hostTests")
     dependsOn("swiftExportSmokeTest")
 }
 
@@ -789,8 +814,8 @@ tasks.register("swiftExportSmokeTest") {
             if (!text.contains("platforms:")) {
                 generatedPackageSwift.writeText(
                     text.replaceFirst(
-                        Regex("(name:\\s*\"[^\"]*\",)"),
-                        "\$1\n    platforms: [.macOS(.v14)],",
+                        Regex("""(let package = Package\s*\(\s*name:\s*"[^"]*",)"""),
+                        "$1\n    platforms: [.macOS(.v14)],",
                     ),
                 )
             }
