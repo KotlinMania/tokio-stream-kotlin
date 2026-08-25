@@ -21,4 +21,12 @@ class StreamIterTest {
             val stream = iter(listOf(1, 2, 3))
             assertEquals(1, stream.firstOrNull())
         }
+
+    @Test
+    fun coop() =
+        runTest {
+            val stream = iter(generateSequence { 1 }.take(10).asIterable())
+            assertEquals(10, stream.toList().size)
+        }
 }
+
