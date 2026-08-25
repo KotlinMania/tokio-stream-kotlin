@@ -27,6 +27,22 @@ public class StreamMap<K, V> : Flow<Pair<K, V>> {
 
     public fun containsKey(key: K): Boolean = entries.any { it.first == key }
 
+    public fun withCapacity(capacity: Int): StreamMap<K, V> = StreamMap()
+
+    public fun capacity(): Int = entries.size
+
+    public fun keys(): List<K> = entries.map { it.first }
+
+    public fun values(): List<Flow<V>> = entries.map { it.second }
+
+    public fun valuesMut(): List<Flow<V>> = entries.map { it.second }
+
+    public fun clear() {
+        entries.clear()
+    }
+
+    public fun sizeHint(): Pair<Int, Int?> = Pair(entries.size, entries.size)
+
     public fun len(): Int = entries.size
 
     public fun isEmpty(): Boolean = entries.isEmpty()
@@ -41,5 +57,8 @@ public class StreamMap<K, V> : Flow<Pair<K, V>> {
 
     public companion object {
         public fun <K, V> new(): StreamMap<K, V> = StreamMap()
+
+        public fun <K, V> withCapacity(capacity: Int): StreamMap<K, V> = StreamMap()
     }
 }
+

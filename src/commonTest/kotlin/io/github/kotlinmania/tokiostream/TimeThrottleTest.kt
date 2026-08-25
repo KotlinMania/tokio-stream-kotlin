@@ -9,7 +9,7 @@ import kotlin.time.Duration.Companion.milliseconds
 
 class TimeThrottleTest {
     @Test
-    fun testThrottle() =
+    fun usage() =
         runTest {
             val s = iter(listOf(1, 2, 3)).throttleStream(10.milliseconds)
             val results = s.toList()
