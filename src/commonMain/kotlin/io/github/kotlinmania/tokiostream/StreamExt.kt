@@ -113,25 +113,25 @@ public object StreamExt {
         duration: Duration,
     ): Throttle<T> = Throttle.new(stream, duration)
 
-    public suspend fun <T> next(stream: Flow<T>): T? = Next.next(stream)
+    public suspend fun <T> next(stream: Flow<T>): T? = Next(stream)
 
-    public suspend fun <T> tryNext(stream: Flow<Result<T>>): Result<T?> = TryNext.tryNext(stream)
+    public suspend fun <T> tryNext(stream: Flow<Result<T>>): Result<T?> = TryNext(stream)
 
     public suspend fun <T> all(
         stream: Flow<T>,
         predicate: (T) -> Boolean,
-    ): Boolean = All.all(stream, predicate)
+    ): Boolean = All(stream, predicate)
 
     public suspend fun <T> any(
         stream: Flow<T>,
         predicate: (T) -> Boolean,
-    ): Boolean = Any.any(stream, predicate)
+    ): Boolean = Any(stream, predicate)
 
     public suspend fun <T, R> fold(
         stream: Flow<T>,
         initial: R,
         operation: (R, T) -> R,
-    ): R = Fold.fold(stream, initial, operation)
+    ): R = Fold(stream, initial, operation)
 
     public suspend fun <T> toList(stream: Flow<T>): List<T> = Collect.toList(stream)
 }

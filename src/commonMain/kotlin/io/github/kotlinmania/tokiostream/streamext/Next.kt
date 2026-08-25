@@ -8,5 +8,7 @@ import kotlinx.coroutines.flow.firstOrNull
  * Helper for the [next] method.
  */
 public object Next {
-    public suspend fun <T> next(stream: Flow<T>): T? = stream.firstOrNull()
+    public suspend operator fun <T> invoke(stream: Flow<T>): T? = stream.firstOrNull()
+
+    public suspend fun <T> execute(stream: Flow<T>): T? = stream.firstOrNull()
 }
