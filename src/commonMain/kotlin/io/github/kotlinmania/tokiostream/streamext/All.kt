@@ -7,7 +7,12 @@ import kotlinx.coroutines.flow.Flow
  * Helper for the [all] method.
  */
 public object All {
-    public suspend fun <T> all(
+    public suspend operator fun <T> invoke(
+        stream: Flow<T>,
+        predicate: (T) -> Boolean,
+    ): Boolean = execute(stream, predicate)
+
+    public suspend fun <T> execute(
         stream: Flow<T>,
         predicate: (T) -> Boolean,
     ): Boolean {
