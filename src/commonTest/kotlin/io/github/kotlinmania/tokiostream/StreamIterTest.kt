@@ -29,4 +29,3 @@ class StreamIterTest {
             assertEquals(10, stream.toList().size)
         }
 }
-

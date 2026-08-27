@@ -1,9 +1,7 @@
 // port-lint: tests tests/stream_timeout.rs
 package io.github.kotlinmania.tokiostream
 
-import io.github.kotlinmania.tokiostream.streamext.Elapsed
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toList
@@ -64,4 +62,3 @@ class StreamTimeoutTest {
             assertEquals(listOf(1, 3, 5), results.map { it.getOrNull() })
         }
 }
-

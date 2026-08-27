@@ -40,4 +40,3 @@ class StreamChunksTimeoutTest {
             assertEquals(listOf(listOf(1, 2, 3, 4)), chunks)
         }
 }
-
