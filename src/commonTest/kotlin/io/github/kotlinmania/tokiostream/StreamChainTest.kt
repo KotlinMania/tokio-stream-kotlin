@@ -1,4 +1,4 @@
-// port-lint: tests tokio-stream/tests/stream_chain.rs
+// port-lint: tests tests/stream_chain.rs
 package io.github.kotlinmania.tokiostream
 
 import io.github.kotlinmania.tokiostream.streamext.Chain

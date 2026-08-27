@@ -1,4 +1,4 @@
-// port-lint: tests tokio-stream/tests/watch.rs
+// port-lint: tests tests/watch.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.MutableStateFlow
