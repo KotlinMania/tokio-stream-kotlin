@@ -238,4 +238,3 @@ class StreamStreamMapTest {
             assertEquals(2, map.len())
         }
 }
-

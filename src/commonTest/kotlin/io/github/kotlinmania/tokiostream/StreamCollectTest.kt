@@ -89,4 +89,3 @@ class StreamCollectTest {
             assertTrue(coll[0].isFailure)
         }
 }
-

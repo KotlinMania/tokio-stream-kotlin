@@ -48,4 +48,3 @@ class StreamChainTest {
         assertEquals(Monster::class, m1::class)
     }
 }
-

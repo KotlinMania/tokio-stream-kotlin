@@ -49,7 +49,6 @@ class MpscBoundedStreamTest {
         assertEquals(true, tx.trySend(1).isFailure)
     }
 
-
     @Test
     fun sizeHintStreamClosedPermitsSend() =
         runTest {

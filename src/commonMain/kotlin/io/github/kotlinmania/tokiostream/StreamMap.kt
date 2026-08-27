@@ -61,4 +61,3 @@ public class StreamMap<K, V> : Flow<Pair<K, V>> {
         public fun <K, V> withCapacity(capacity: Int): StreamMap<K, V> = StreamMap()
     }
 }
-

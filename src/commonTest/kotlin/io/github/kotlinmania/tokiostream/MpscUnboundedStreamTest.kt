@@ -49,4 +49,3 @@ class MpscUnboundedStreamTest {
         assertEquals(true, tx.trySend(1).isFailure)
     }
 }
-

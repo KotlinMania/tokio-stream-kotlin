@@ -46,4 +46,3 @@ class StreamMergeTest {
         assertEquals(Monster::class, m1::class)
     }
 }
-
