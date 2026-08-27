@@ -1,4 +1,4 @@
-// port-lint: source stream_ext.rs
+// port-lint: source tokio-stream/src/stream_ext.rs
 package io.github.kotlinmania.tokiostream
 
 import io.github.kotlinmania.tokiostream.streamext.All

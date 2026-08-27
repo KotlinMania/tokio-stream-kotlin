@@ -1,4 +1,4 @@
-// port-lint: tests stream_ext.rs
+// port-lint: tests tokio-stream/src/stream_ext.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.flowOf

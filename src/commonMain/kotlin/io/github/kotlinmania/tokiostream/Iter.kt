@@ -1,4 +1,4 @@
-// port-lint: source iter.rs
+// port-lint: source tokio-stream/src/iter.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.Flow

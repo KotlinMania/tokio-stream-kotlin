@@ -1,4 +1,4 @@
-// port-lint: tests tests/stream_merge.rs
+// port-lint: tests tokio-stream/tests/stream_merge.rs
 package io.github.kotlinmania.tokiostream
 
 import io.github.kotlinmania.tokiostream.streamext.Merge
