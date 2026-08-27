@@ -1,4 +1,4 @@
-// port-lint: tests tokio-stream/tests/stream_pending.rs
+// port-lint: tests tests/stream_pending.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlin.test.Test

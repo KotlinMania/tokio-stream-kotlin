@@ -1,4 +1,4 @@
-// port-lint: tests tokio-stream/tests/time_throttle.rs
+// port-lint: tests tests/time_throttle.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.toList
