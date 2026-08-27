@@ -1,4 +1,4 @@
-// port-lint: tests stream_fuse.rs
+// port-lint: tests tokio-stream/tests/stream_fuse.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.flow

@@ -1,4 +1,4 @@
-// port-lint: tests mpsc_bounded_stream.rs
+// port-lint: tests tokio-stream/tests/mpsc_bounded_stream.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.channels.Channel

@@ -1,4 +1,4 @@
-// port-lint: source empty.rs
+// port-lint: source tokio-stream/src/empty.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.Flow

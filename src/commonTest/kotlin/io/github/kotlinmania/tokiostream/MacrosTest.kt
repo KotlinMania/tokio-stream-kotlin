@@ -1,4 +1,4 @@
-// port-lint: tests macros.rs
+// port-lint: tests tokio-stream/src/macros.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlin.test.Test
