@@ -1,4 +1,4 @@
-// port-lint: source macros.rs
+// port-lint: source tokio-stream/src/macros.rs
 package io.github.kotlinmania.tokiostream
 
 /**

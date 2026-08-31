@@ -1,4 +1,4 @@
-// port-lint: tests tests/stream_collect.rs
+// port-lint: tests tokio-stream/tests/stream_collect.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.test.runTest

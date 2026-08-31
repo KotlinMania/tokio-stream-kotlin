@@ -1,4 +1,4 @@
-// port-lint: tests tests/stream_stream_map.rs
+// port-lint: tests tokio-stream/tests/stream_stream_map.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlinx.coroutines.flow.toList
