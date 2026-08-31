@@ -7,10 +7,13 @@ import kotlinx.coroutines.flow.FlowCollector
 /** Stream for the [empty] function. */
 internal class Empty<T> : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
+        collector.hashCode()
         // Streams do nothing unless polled; this one is immediately complete.
     }
 
-    fun sizeHint(): Pair<Int, Int?> = 0 to 0
+    fun sizeHint(): Pair<Int, Int?> {
+        return 0 to 0
+    }
 }
 
 /**
@@ -26,4 +29,6 @@ internal class Empty<T> : Flow<T> {
  * check(none.firstOrNull() == null)
  * ```
  */
-fun <T> empty(): Flow<T> = Empty()
+fun <T> empty(): Flow<T> {
+    return Empty()
+}

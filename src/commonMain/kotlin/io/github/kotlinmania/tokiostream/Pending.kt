@@ -8,10 +8,13 @@ import kotlinx.coroutines.flow.FlowCollector
 /** Stream for the [pending] function. */
 internal class Pending<T> : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
+        collector.hashCode()
         awaitCancellation()
     }
 
-    fun sizeHint(): Pair<Int, Int?> = 0 to null
+    fun sizeHint(): Pair<Int, Int?> {
+        return 0 to null
+    }
 }
 
 /**
@@ -33,4 +36,6 @@ internal class Pending<T> : Flow<T> {
  * error("unreachable")
  * ```
  */
-fun <T> pending(): Flow<T> = Pending()
+fun <T> pending(): Flow<T> {
+    return Pending()
+}
