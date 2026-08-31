@@ -1,4 +1,4 @@
-// port-lint: tests tests/stream_panic.rs
+// port-lint: tests tokio-stream/tests/stream_panic.rs
 package io.github.kotlinmania.tokiostream
 
 import kotlin.test.Test

@@ -1,4 +1,4 @@
-// port-lint: source stream_ext/then.rs
+// port-lint: source tokio-stream/src/stream_ext/then.rs
 package io.github.kotlinmania.tokiostream.streamext
 
 import kotlinx.coroutines.flow.Flow
