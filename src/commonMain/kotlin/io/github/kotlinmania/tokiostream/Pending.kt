@@ -12,9 +12,7 @@ internal class Pending<T> : Flow<T> {
         awaitCancellation()
     }
 
-    fun sizeHint(): Pair<Int, Int?> {
-        return 0 to null
-    }
+    fun sizeHint(): Pair<Int, Int?> = 0 to null
 }
 
 /**
@@ -36,6 +34,4 @@ internal class Pending<T> : Flow<T> {
  * error("unreachable")
  * ```
  */
-fun <T> pending(): Flow<T> {
-    return Pending()
-}
+fun <T> pending(): Flow<T> = Pending()
