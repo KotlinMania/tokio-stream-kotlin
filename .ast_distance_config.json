@@ -2,7 +2,7 @@
   "type": "port",
   "name": "tokio-stream-kotlin",
   "source": {
-    "path": "tmp",
+    "path": "tmp/tokio-stream/src",
     "lang": "rust"
   },
   "target": {

@@ -1,4 +1,4 @@
-// port-lint: source tokio-stream/src/stream_ext/timeout.rs
+// port-lint: source stream_ext/timeout.rs
 package io.github.kotlinmania.tokiostream.streamext
 
 import kotlinx.coroutines.TimeoutCancellationException
